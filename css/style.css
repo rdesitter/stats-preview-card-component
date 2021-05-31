@@ -1,0 +1,124 @@
+*, ::after, ::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: #090b1a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 15px;
+}
+
+.container {
+  display: flex;
+  max-width: 1109px;
+  border-radius: 5px;
+  overflow: hidden;
+  flex-direction: column;
+  margin: 0 30px;
+}
+@media screen and (min-width: 1000px) {
+  .container {
+    flex-direction: row;
+    margin: 0 auto;
+  }
+}
+
+.stats-element {
+  background-color: #1b1938;
+  padding: 40px 30px;
+  flex-basis: 50%;
+}
+@media screen and (min-width: 1000px) {
+  .stats-element {
+    padding: 80px 120px 60px 70px;
+  }
+}
+.stats-element__title {
+  font-family: "Inter", helvetica, sans-serif;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 30px;
+}
+.stats-element__title-highlight {
+  color: #aa5cdb;
+}
+.stats-element__text {
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 70px;
+}
+.stats-element__items {
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+}
+.stats-element__items__list {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+}
+.stats-element__items__list .case {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: "Inter", helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+.stats-element__items__list .case:before {
+  content: attr(data-el);
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.stats-image {
+  flex-basis: 50%;
+  background-color: #aa5cdb;
+  background-image: url(../images/image-header-mobile.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media screen and (min-width: 1000px) {
+  .stats-image {
+    background-image: url(../images/image-header-desktop.jpg);
+  }
+}
+.stats-image:before {
+  opacity: 0.8;
+  mix-blend-mode: multiply;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  background-color: #aa5cdb;
+  display: block;
+}
+.stats-image::after {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  background-color: #aa5cdb;
+  display: block;
+}
+
+/*# sourceMappingURL=style.css.map */

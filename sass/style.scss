@@ -1,0 +1,134 @@
+@import "variables";
+
+*, ::after, ::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: $dark-blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: $font-family-lexend;
+    font-size: 15px;
+}
+
+.container {
+    display: flex;
+    max-width: 1109px;
+    border-radius: 5px;
+    overflow: hidden;
+    flex-direction: column;
+    margin: 0 30px;
+
+    @media screen and (min-width: 1000px) {
+        flex-direction: row;
+        margin: 0 auto;
+    }
+}
+
+.stats-element {
+    background-color: $card-background;
+    padding: 40px 30px;
+    flex-basis: 50%;
+
+    @media screen and (min-width: 1000px) {
+        padding: 80px 120px 60px 70px;
+    }
+
+    &__title {
+        font-family: $font-family-inter;
+        font-weight: 700;
+        color: $white;
+        margin-bottom: 30px;
+
+        &-highlight {
+            color: $highlight;
+        }
+    }
+
+    &__text {
+        color: $paragraph;
+        margin-bottom: 70px;
+    }
+
+    &__items {
+        color: $stats;
+        text-transform: uppercase;
+
+        &__list{
+            list-style-type: none;
+            display: flex;
+            justify-content: space-between;
+
+            .case {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                font-family: $font-family-inter;
+                font-weight: 400;
+                font-size: 14px;
+
+                &:before{
+                    content: attr(data-el);
+                    color: $white;
+                    font-size: 24px;
+                    font-weight: 700;
+                }
+            }
+
+        }
+
+        
+    }
+}
+
+.stats-image {
+    flex-basis: 50%;
+    background-color: $highlight;
+    background-image: url(../images/image-header-mobile.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    @media screen and (min-width: 1000px) {
+        background-image: url(../images/image-header-desktop.jpg);
+    }
+
+    &:before{
+        opacity: 0.8;
+        mix-blend-mode: multiply;
+        position: absolute;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        background-color: $highlight;
+        display: block;
+    }
+
+    &::after{
+        position: absolute;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        background-color: $highlight;
+        display: block;
+    }
+
+
+}
